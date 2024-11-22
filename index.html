@@ -33,9 +33,6 @@
                 flex-flow: column;
                 align-items: center;
             }
-            .cont2 {
-                display: none;
-            }
             .logo {
                 display: flex;
                 justify-content: center;
@@ -47,6 +44,11 @@
             .logo img {
                 width: 90%;
             }
+            .tt {
+                font-size: 25pt;
+                text-align: center;
+                font-weight: bold;
+            }
             .botoes {
                 display: flex;
                 flex-flow: column;
@@ -57,11 +59,11 @@
 
             button {
                 margin: 10px;
-                font-size: 30pt;
+                font-size: 25pt;
                 font-weight: bold;
                 padding: 5px 10px;
                 color: white;
-                background-color: blue;
+                background-color: red;
                 border: 0;
                 border-radius: 5px;
                 cursor: pointer;
@@ -75,13 +77,15 @@
                 display: flex;
                 flex-wrap: wrap;
                 align-items: center;
-                justify-content: center;
+                justify-content: space-evenly;
+                background-color: #001d7e;
             }
 
             .card {
                 width: 250px;
                 border: 1px solid;
                 text-align: center;
+                background-color: #ffffff80;
             }
 
             .card .d1 {
@@ -105,6 +109,9 @@
                 background-color: red;
                 font-size: 15pt;
             }
+            .d2 button:hover {
+                background-color: black;
+            }
 
             t {
                 font-weight: bold;
@@ -112,6 +119,57 @@
             .esp10 {
                 width: 10px;
                 height: 10px;
+            }
+
+            .nova {
+                width: 95%;
+                height: 95vh;
+                display: none;
+                flex-flow: column;
+                align-items: center;
+                justify-content: center;
+                position: absolute;
+                background-color: #000000e8;
+                margin-left: 2.5%;
+                margin-right: 2.5%;
+                top: 2%;
+                color: white;
+            }
+            .nova svg {
+                position: absolute;
+                width: 30px;
+                top: 5px;
+                right: 5px;
+                fill: red;
+            }
+            .nova svg:hover {
+                fill: white;
+            }
+
+            .dNova1,
+            .dNova2,
+            .dNova3 {
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+                justify-content: center;
+                flex-flow: column;
+                font-size: 20pt;
+                font-weight: bold;
+            }
+            .nova button {
+                width: 250px;
+            }
+            .dNova1 div,
+            .dNova2 div,
+            .dNova3 div {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .dNova2,
+            .dNova3 {
+                display: none;
             }
         </style>
     </head>
@@ -121,18 +179,42 @@
             <div class="logo">
                 <img src="./img/logo-dark.svg" alt="Logo Comcal" />
             </div>
+            <div class="cont1" id="cont1">
+                <span class="tt">PARADAS DAS INJETORAS</span>
+            </div>
             <div class="botoes">
-                <div class="cont1" id="cont1">
-                    <button id="bInj">INJETORA</button>
-                    <button id="bPre">PRENSA</button>
-                </div>
                 <div class="cont2" id="cont2">
-                    <button>INICIAR</button>
-                    <button>ENCERRAR</button>
+                    <button id="btNova">NOVA PARADA</button>
                 </div>
             </div>
         </div>
         <div class="right">
+            <div class="card">
+                <div class="d1">INJETORA 1 TURNO 1</div>
+                <div class="d2">
+                    <div class="d3">
+                        <div class="esp10"></div>
+                        <span><t>Motivo:</t></span>
+                        <span>MANUTENÇÃO DE MATRIZ</span>
+                    </div>
+                    <div class="d3">
+                        <div class="esp10"></div>
+                        <span><t>Inicio:</t></span
+                        ><span> 2024-11-22 as 07:26</span>
+                    </div>
+                    <div class="d3">
+                        <div class="esp10"></div>
+                        <span><t>Tempo Parado:</t></span>
+                        <span><t1>08 Horas 41 Minutos.</t1></span>
+                    </div>
+                    <div class="espaco"></div>
+                    <div class="btn">
+                        <a href="src/sub5.php?id=21526&amp;f=finalizar1"
+                            ><button class="finalizar">Finalizar</button></a
+                        >
+                    </div>
+                </div>
+            </div>
             <div class="card">
                 <div class="d1">INJETORA 2 TURNO 1</div>
                 <div class="d2">
@@ -159,21 +241,117 @@
                     </div>
                 </div>
             </div>
+            <div class="card">
+                <div class="d1">INJETORA 4 TURNO 1</div>
+                <div class="d2">
+                    <div class="d3">
+                        <div class="esp10"></div>
+                        <span><t>Motivo:</t></span>
+                        <span>MANUTENÇÃO DE MATRIZ</span>
+                    </div>
+                    <div class="d3">
+                        <div class="esp10"></div>
+                        <span><t>Inicio:</t></span
+                        ><span> 2024-11-22 as 07:26</span>
+                    </div>
+                    <div class="d3">
+                        <div class="esp10"></div>
+                        <span><t>Tempo Parado:</t></span>
+                        <span><t1>02 Horas 41 Minutos.</t1></span>
+                    </div>
+                    <div class="espaco"></div>
+                    <div class="btn">
+                        <a href="src/sub5.php?id=21526&amp;f=finalizar1"
+                            ><button class="finalizar">Finalizar</button></a
+                        >
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="nova" class="nova">
+            <div id="dvFechar">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                    <path
+                        d="M64 32C28.7 32 0 60.7 0 96L0 416c0 35.3 28.7 64 64 64l320 0c35.3 0 64-28.7 64-64l0-320c0-35.3-28.7-64-64-64L64 32zm79 143c9.4-9.4 24.6-9.4 33.9 0l47 47 47-47c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-47 47 47 47c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-47-47-47 47c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l47-47-47-47c-9.4-9.4-9.4-24.6 0-33.9z"
+                    />
+                </svg>
+            </div>
+            <div class="dNova1" id="dNova1">
+                <span>TURNO:</span>
+                <div>
+                    <button id="btTur1" onclick="fecharDiv1AbrirDiv2()">
+                        TURNO 1
+                    </button>
+                    <button id="btTur2" onclick="fecharDiv1AbrirDiv2()">
+                        TURNO 2
+                    </button>
+                </div>
+            </div>
+            <div class="dNova2" id="dNova2">
+                <span>MÁQUINA:</span>
+                <div>
+                    <button id="btMaq1" onclick="fecharDiv2AbrirDiv3()">
+                        INJETORA 1
+                    </button>
+                    <button id="btMaq2" onclick="fecharDiv2AbrirDiv3()">
+                        INJETORA 2
+                    </button>
+                    <button id="btMaq3" onclick="fecharDiv2AbrirDiv3()">
+                        INJETORA 3
+                    </button>
+                    <button id="btMaq4" onclick="fecharDiv2AbrirDiv3()">
+                        INJETORA 4
+                    </button>
+                    <button id="btMaq5" onclick="fecharDiv2AbrirDiv3()">
+                        INJETORA 5
+                    </button>
+                </div>
+            </div>
+            <div class="dNova3" id="dNova3">
+                <span>MOTIVO:</span>
+                <div>
+                    <button id="btMot1">MOTIVO 1</button>
+                    <button id="btMot2">MOTIVO 2</button>
+                    <button id="btMot3">MOTIVO 3</button>
+                    <button id="btMot4">MOTIVO 4</button>
+                    <button id="btMot5">MOTIVO 5</button>
+                    <button id="btMot6">MOTIVO 6</button>
+                    <button id="btMot7">MOTIVO 7</button>
+                    <button id="btMot8">MOTIVO 8</button>
+                    <button id="btMot9">MOTIVO 9</button>
+                    <button id="btMot10">MOTIVO 10</button>
+                    <button id="btMot11">MOTIVO 11</button>
+                    <button id="btMot12">MOTIVO 12</button>
+                    <button id="btMot13">MOTIVO 13</button>
+                </div>
+            </div>
         </div>
         <script>
-            let cont1 = document.querySelector(".cont1");
-            let cont2 = document.querySelector(".cont2");
-            let bInj = document.getElementById("bInj");
-            let bPre = document.getElementById("bPre");
+            let btNova = document.getElementById("btNova");
+            let divNova = document.getElementById("nova");
+            let dvFechar = document.getElementById("dvFechar");
+            let dNova1 = document.getElementById("dNova1");
+            let dNova2 = document.getElementById("dNova2");
+            let dNova3 = document.getElementById("dNova3");
 
-            bInj.onclick = () => {
-                cont1.style.display = "none";
-                cont2.style.display = "flex";
+            btNova.onclick = () => {
+                divNova.style.display = "flex";
             };
-            bPre.onclick = () => {
-                cont1.style.display = "none";
-                cont2.style.display = "flex";
+
+            dvFechar.onclick = () => {
+                divNova.style.display = "none";
             };
+
+            function fecharDiv1AbrirDiv2() {
+                dNova1.style.display = "none";
+                dNova2.style.display = "flex";
+            }
+
+            function fecharDiv2AbrirDiv3() {
+                dNova2.style.display = "none";
+                dNova3.style.display = "flex";
+            }
         </script>
     </body>
 </html>
