@@ -27,18 +27,66 @@
                 min-height: 100vh;
                 /* background-color: blue; */
             }
+            .cont1,
+            .cont2 {
+                display: flex;
+                flex-flow: column;
+                align-items: center;
+            }
+            .cont1 {
+                display: none;
+            }
+            .logo {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 20vh;
+                /* background-color: aqua; */
+                border-bottom: 2px solid #cecece;
+            }
+            .logo img {
+                width: 90%;
+            }
+            .botoes {
+                display: flex;
+                flex-flow: column;
+                align-items: center;
+                justify-content: center;
+                height: 80vh;
+            }
+
+            button {
+                margin: 10px;
+                font-size: 30pt;
+                font-weight: bold;
+                padding: 5px 10px;
+                color: white;
+                background-color: blue;
+                border: 0;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+
+            button:hover {
+                background-color: darkblue;
+            }
         </style>
     </head>
 
     <body>
         <div class="left">
-            <div class="cont1" id="cont1">
-                <button>INJETORA</button>
-                <button>PRENSA</button>
+            <div class="logo">
+                <img src="./img/logo-dark.svg" alt="Logo Comcal" />
             </div>
-            <div class="cont2" id="cont2">
-                <button>INICIAR</button>
-                <button>ENCERRAR</button>
+            <div class="botoes">
+                <div class="cont1" id="cont1">
+                    <button>INJETORA</button>
+                    <button>PRENSA</button>
+                </div>
+                <div class="cont2" id="cont2">
+                    <button>INICIAR</button>
+                    <button>ENCERRAR</button>
+                </div>
             </div>
         </div>
         <div class="right"></div>
