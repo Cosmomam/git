@@ -33,7 +33,7 @@
                 flex-flow: column;
                 align-items: center;
             }
-            .cont1 {
+            .cont2 {
                 display: none;
             }
             .logo {
@@ -52,7 +52,7 @@
                 flex-flow: column;
                 align-items: center;
                 justify-content: center;
-                height: 80vh;
+                height: 50vh;
             }
 
             button {
@@ -80,8 +80,8 @@
             </div>
             <div class="botoes">
                 <div class="cont1" id="cont1">
-                    <button>INJETORA</button>
-                    <button>PRENSA</button>
+                    <button id="bInj">INJETORA</button>
+                    <button id="bPre">PRENSA</button>
                 </div>
                 <div class="cont2" id="cont2">
                     <button>INICIAR</button>
@@ -90,6 +90,16 @@
             </div>
         </div>
         <div class="right"></div>
-        <script></script>
+        <script>
+            let cont1 = document.querySelector(".cont1");
+            let cont2 = document.querySelector(".cont2");
+            let bInj = document.getElementById("bInj");
+            let bPre = document.getElementById("bPre");
+
+            bInj.onclick = () => {
+                cont1.style.display = "none";
+            };
+            bInj.onclick = () => {};
+        </script>
     </body>
 </html>
