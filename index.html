@@ -4,14 +4,44 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Document</title>
+        <style>
+            * {
+                font-family: sans-serif;
+            }
+            body {
+                display: flex;
+                flex-flow: row;
+                width: 100%;
+                min-height: 100vh;
+                margin: 0;
+                padding: 0;
+            }
+            .left {
+                width: 20%;
+                min-height: 100vh;
+                border-right: 5px solid #cecece;
+                background-color: #ddc;
+            }
+            .right {
+                width: 80%;
+                min-height: 100vh;
+                /* background-color: blue; */
+            }
+        </style>
     </head>
 
     <body>
-        <h1>Testes Cosmo</h1>
-        <h3>Novo teste para o GitHub!</h3>
-
-        <script>
-            alert("teste javascript");
-        </script>
+        <div class="left">
+            <div class="cont1" id="cont1">
+                <button>INJETORA</button>
+                <button>PRENSA</button>
+            </div>
+            <div class="cont2" id="cont2">
+                <button>INICIAR</button>
+                <button>ENCERRAR</button>
+            </div>
+        </div>
+        <div class="right"></div>
+        <script></script>
     </body>
 </html>
